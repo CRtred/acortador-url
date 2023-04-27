@@ -1,0 +1,4 @@
+new-user-mongo
+d7UUnRN1WLzremgJ
+
+mongodb+srv://new-user-mongo:<password>@cluster0.ehwcwm7.mongodb.net/?retryWrites=true&w=majority
