@@ -28,7 +28,12 @@ const userSchema = new Schema({
     confirmedAccount: {
         type: Boolean,
         default: false,
-    }
+    },
+    imagen: {
+        type: String,
+        default: null,
+
+    },
 });
 
 userSchema.pre("save", async function (next) {
@@ -58,5 +63,7 @@ userSchema.pre("save", async function (next) {
 userSchema.methods.comparePassword = async function (candidatePassword) {
     return await bcrypt.compare(candidatePassword, this.password)
 }
+
+
 
 module.exports = mongoose.model("User", userSchema);

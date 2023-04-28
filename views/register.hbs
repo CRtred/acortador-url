@@ -3,11 +3,10 @@
     <div class="col-md-6">
         <form action="/auth/register" method="POST">
             <input type="hidden" name="_csrf" value="{{csrfToken}}" />
-            <input type="text" name="userName" class="form-control mb-2" placeholder="Ingrese su nombre" value="Brandon">
-            <input type="text" name="email" class="form-control mb-2" placeholder="Ingrese email" value="carracerlive@gmail.com">
-            <input type="password" name="password" class="form-control mb-2" placeholder="Ingrese una contraseña" value="c9b20aec56">
-            <input type="password" name="rePassword" class="form-control mb-2" placeholder="confirme su contraseña"
-                value="c9b20aec56">
+            <input type="text" name="userName" class="form-control mb-2" placeholder="Ingrese su nombre">
+            <input type="text" name="email" class="form-control mb-2" placeholder="Ingrese email">
+            <input type="password" name="password" class="form-control mb-2" placeholder="Ingrese una contraseña">
+            <input type="password" name="rePassword" class="form-control mb-2" placeholder="confirme su contraseña">
             <button class="btn btn-primary form-control mb-2" type="submit">Registrarse</button>
         </form>
 
