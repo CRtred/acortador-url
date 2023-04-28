@@ -7,7 +7,7 @@ const navbar = document.getElementById("navbar")
 
 document.addEventListener("click", (e) => {
     if (e.target.dataset.short) {
-        const url = `http://localhost:5000/${e.target.dataset.short}`;
+        const url = `${window.location.origin}/${e.target.dataset.short}`;
 
         navigator.clipboard
             .writeText(url)
@@ -20,7 +20,7 @@ document.addEventListener("click", (e) => {
     }
 });
 
-// document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', (e) => {
 
 
 //     perfil.classList.add("d-none")
@@ -30,7 +30,7 @@ document.addEventListener("click", (e) => {
 
 
 
-//     if (localStorage.getItem()) {
+//     if (!localStorage.getItem(e.target.dataset)) {
 //         console.log("entro al if")
 
 //         perfil.classList.remove("d-none")
