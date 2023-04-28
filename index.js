@@ -18,7 +18,7 @@ const clientDB = require('./database/db');
 const app = express();
 const corsOptions = {
     credentials: true,
-    origin: process.env.PATHHEROKU || "*",
+    origin: process.env.PATHHERENDER || "*",
     methods: ["GET", "POST"],
 }
 
@@ -32,9 +32,9 @@ app.use(session({
     name: "secret-name-tred",
     store: MongoStore.create({
         clientPromise: clientDB,
-        dbName: process.env.DBNAME,
+
     }),
-    cookie: { secure: process.env.MODO === "production", maxAge: 30 * 24 * 60 * 60 * 1000 },
+    cookie: { secure: process.env.MODO === "production" ? true : false, maxAge: 30 * 24 * 60 * 60 * 1000 },
 }));
 
 app.use(flash());
