@@ -39,7 +39,7 @@ const registerUser = async (req, res) => {
             from: '"Fred Foo 👻" <foo@example.com>',
             to: user.email,
             subject: "verifique cuenta de correo",
-            html: `<a href="${process.env.PATHRENDER}/auth/confirmar/${user.tokenConfirm}">verificar cuenta aquí</a>`,
+            html: `<a href="${process.env.PATHHEROKU || "http://localhost:5000"}/auth/confirmar/${user.tokenConfirm}">verificar cuenta aquí</a>`,
         });
 
 
