@@ -22,7 +22,7 @@ const corsOptions = {
     methods: ["GET", "POST"],
 }
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.set("trust proxy", 1);
 
 app.use(session({
