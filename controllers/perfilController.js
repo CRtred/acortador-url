@@ -51,7 +51,7 @@ module.exports.editarFotoPerfil = async (req, res) => {
             const dirFile = path.join(__dirname, `../public/uploads/${req.user.id}.${extension}`);
 
             fs.copyFile(file.filepath, dirFile, function (err) {
-                if (err) throw err;
+                if (err) throw new Error("no se pudo copiar");
                 return
 
             });
