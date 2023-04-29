@@ -7,7 +7,7 @@ const User = require("../models/User");
 module.exports.formPerfil = async (req, res) => {
     try {
         const user = await User.findById(req.user.id);
-        res.render("perfil", { user: req.user, imagen: user.imagen });
+        res.render("perfil", { userLogged: req.isAuthenticated(), user: req.user, imagen: user.imagen });
     } catch (error) {
         req.flash("mensajes", [{ msg: "Error al leer usuario" }])
         return res.redirect("/perfil");

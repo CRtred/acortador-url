@@ -11,19 +11,23 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Inicio</a>
                     </li>
+                    {{#if userLogged}}
                     <li class="nav-item">
                         <a  id="perfil" class="nav-link" href="/perfil">Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a id="iniciar" class="nav-link" href="/auth/login">Iniciar sesion</a>
-                    </li>
-                    <li class="nav-item">
                         <a id="salir" class="nav-link" href="/auth/logout">Salir</a>
+                    </li>
+                        
+                    {{else}}
+                    <li class="nav-item">
+                        <a id="iniciar" class="nav-link" href="/auth/login">Iniciar sesion</a>
                     </li>
                     <li class="nav-item">
                         <a id="registro" class="nav-link " href="/auth/register">Registrarse</a>
                     </li>
                     
+                    {{/if}}
                 </ul>
             </div>
         </div>

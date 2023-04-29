@@ -5,7 +5,7 @@ const mongoSanitize = require("express-mongo-sanitize");
 const flash = require('connect-flash');
 const passport = require("passport");
 const cors = require("cors");
-const { create } = require("handlebars");
+const { create } = require("express-handlebars");
 const csrf = require("csurf");
 
 
@@ -18,7 +18,7 @@ const clientDB = require('./database/db');
 const app = express();
 const corsOptions = {
     credentials: true,
-    origin: process.env.PATHHEROKU || "*",
+    origin: process.env.PATHRENDER || "*",
     methods: ["GET", "POST"],
 }
 

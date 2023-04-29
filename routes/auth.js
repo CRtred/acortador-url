@@ -2,7 +2,7 @@
 const express = require('express');
 const { body } = require('express-validator');
 
-const { loginForm, registerForm, registerUser, confirmarCuenta, loginUser, } = require('../controllers/authController');
+const { loginForm, registerForm, registerUser, confirmarCuenta, loginUser, cerrarSesion, } = require('../controllers/authController');
 
 const router = express.Router();
 
@@ -27,12 +27,7 @@ router.post("/login", [
     body("email", "ingrese un correo valido").trim().isEmail().normalizeEmail(),
     body("password", "ingrese una contraseña").trim().isLength({ min: 6 }).escape()
 ], loginUser);
-router.get("/logout", (req, res) => {
-    req.logOut(req.user, err => {
-        if (err) return next(err);
-        res.redirect("/auth/login");
-    })
-});
+router.get("/logout", cerrarSesion);
 
 
 module.exports = router;

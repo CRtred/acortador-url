@@ -124,10 +124,10 @@ const loginUser = async (req, res) => {
     }
 }
 
-// const cerrarSesion = function (req, res) {
-//     req.logout();
-//     res.redirect("/auth/login")
-// }
+const cerrarSesion = function (req, res) {
+    req.logout();
+    res.redirect("/auth/login")
+}
 
 
 module.exports = {
@@ -136,5 +136,5 @@ module.exports = {
     registerUser,
     confirmarCuenta,
     loginUser,
-    // cerrarSesion
+    cerrarSesion
 }
